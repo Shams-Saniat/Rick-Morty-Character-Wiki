@@ -10,7 +10,7 @@ function App() {
   let [pageNumber, setPageNumber] = useState(1);
   let [search, setSearch] = useState("");
   let [fetchData, updateFetchData] = useState([]);
-  let {info, results} = fetchData
+  let { info, results } = fetchData
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
@@ -24,8 +24,8 @@ function App() {
   return (
     <div className="App">
       <h1 className="text-center ubuntu my-4">Rick and Morty <span className="text-primary">Wiki</span></h1>
-      
-      <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
+
+      <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
       <div className="container">
         <div className="row">
@@ -40,7 +40,11 @@ function App() {
         </div>
       </div>
 
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
 
     </div>
   );
