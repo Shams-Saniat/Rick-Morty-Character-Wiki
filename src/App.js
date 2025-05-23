@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
+import CardDetails from "./components/Cards/CardDetails";
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<CardDetails />} />        
         <Route path="/location" element={<Location />} />
+        <Route path="/location/:id" element={<CardDetails />} />
         <Route path="/episodes" element={<Episodes />} />
+        <Route path="/episodes/:id" element={<CardDetails />} />
       </Routes>
     </Router>
   )
@@ -42,6 +46,7 @@ const Home = () => {
 
   return (
     <div className="App">
+      <h1 className="text-center mb-4">Characters</h1>
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
       <div className="container">
@@ -51,7 +56,7 @@ const Home = () => {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards results={results} />
+              <Cards page="/" results={results} />
             </div>
           </div>
         </div>
