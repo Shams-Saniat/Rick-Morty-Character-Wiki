@@ -1,0 +1,70 @@
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #000428, #004e92); /* Dark gradient */
+  position: relative;
+  overflow: hidden;
+
+  /* Optional: Add decorative elements like in the image */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #00cc88 0%, transparent 70%); /* Neon green portal effect */
+    opacity: 0.3;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #00ccff 0%, transparent 70%); /* Neon blue spaceship effect */
+    opacity: 0.3;
+    border-radius: 50%;
+  }
+}
+
+.title {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+
+  .amp {
+    color: #00cc88; /* Neon green for the ampersand */
+    font-size: 5rem;
+    margin: 0 10px;
+  }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.watchButton {
+  background: #00cc88; /* Neon green */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #00b377; /* Slightly darker green on hover */
+  }
+}

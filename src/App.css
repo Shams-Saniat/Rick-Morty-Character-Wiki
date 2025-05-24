@@ -1,5 +1,24 @@
-.active{
-    border-bottom: 2px solid #0b5ed7;
-    font-weight: bold;
-    color: #0b5ed7 !important;
+body {
+  background: linear-gradient(to bottom, #000428, #004e92);
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.App {
+  padding: 20px;
+}
+
+.navbar {
+  background: #000428 !important;
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #00ccff; /* Neon blue */
+  color: #00ccff !important;
+  font-weight: bold;
 }

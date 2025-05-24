@@ -1,0 +1,54 @@
+.sliderContainer {
+  margin: 40px 0;
+
+  h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+
+  .viewAll {
+    display: inline-block;
+    background: #00cc88; /* Neon green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .card {
+    background: #1a1a1a; /* Darker shade */
+    border: 2px solid #00ccff; /* Neon blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 20px; /* Increased from 10px to 20px for more space */
+    text-align: center;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    h3 {
+      color: white;
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+    }
+  }
+}
