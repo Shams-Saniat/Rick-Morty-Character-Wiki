@@ -9,40 +9,46 @@ function Cards({ results, page }) {
       let { id, name, image, location, status } = x;
       return (
         <Link
-        style={{textDecoration: "none"}}
-        to={`${page}${id}`} 
-        key={id} 
-        className="col-lg-4 col-md-6 col-12 mb-4 position-relative text-white">
-          <div className={`${styles.cards} d-flex flex-column justify-content-center`}>
-            <img src={image} alt="" className={`${styles.img} img-fluid`} />
-            <div style={{ padding: "10px" }} className="content"></div>
-            <div className="fs-4 fw-bold mb-4">{name}</div>
-            <div className="">
-              <div className="fs-6">Last location</div>
-              <div className="fs-5">{location.name}</div>
+          style={{ textDecoration: "none" }}
+          to={`${page}${id}`}
+          key={id}
+          className="col-lg-4 col-md-6 col-12 mb-4 position-relative text-white"
+        >
+          <div className={styles.cardWrapper}>
+            <div className={styles.cardInner}>
+              <div className={styles.imageContainer}>
+                <img src={image} alt={name} className="img-fluid" />
+              </div>
+              <div className={styles.cardContent}>
+                <div className={styles.characterName}>{name}</div>
+                <div className={styles.locationInfo}>
+                  <div className={styles.locationLabel}>Last location</div>
+                  <div className={styles.locationName}>{location.name}</div>
+                </div>
+              </div>
             </div>
+            {(() => {
+              if (status === "Dead") {
+                return (
+                  <div className={`${styles.badge} ${styles.badgeDead} position-absolute badge`}>
+                    {status}
+                  </div>
+                );
+              } else if (status === "Alive") {
+                return (
+                  <div className={`${styles.badge} ${styles.badgeAlive} position-absolute badge`}>
+                    {status}
+                  </div>
+                );
+              } else {
+                return (
+                  <div className={`${styles.badge} ${styles.badgeUnknown} position-absolute badge`}>
+                    {status}
+                  </div>
+                );
+              }
+            })()}
           </div>
-          {(() => {
-            if (status === "Dead") {
-              return (
-                <div className={`${styles.badge} position-absolute badge bg-danger`}>
-                  {status}
-                </div>
-              );
-            } else if (status === "Alive") {
-              return (
-                <div className={`${styles.badge} position-absolute badge bg-success`}>
-                  {status}
-                </div>
-              );
-            } else {
-              return (
-                <div className={`${styles.badge} position-absolute badge bg-secondary`}>
-                  {status}
-                </div>
-              );
-            }
-          })()}
         </Link>
       );
     });

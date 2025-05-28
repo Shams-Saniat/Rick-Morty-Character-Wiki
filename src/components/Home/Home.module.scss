@@ -95,10 +95,10 @@
   font-size: 1.2rem;
   color: #87fbff;
   margin: 0;
-  text-align: left; /* Align left for natural flow */
+  text-align: left;
   position: relative;
   z-index: 1;
-  flex-shrink: 0; /* Prevent tagline from shrinking */
+  flex-shrink: 0;
 }
 
 .watchButton {
@@ -113,8 +113,8 @@
   transition: background 0.3s;
   position: relative;
   z-index: 1;
-  width: auto; /* Ensure button size is based on content */
-  flex-shrink: 0; /* Prevent button from shrinking */
+  width: auto;
+  flex-shrink: 0;
 
   &:hover {
     background: #00b377;
@@ -143,11 +143,11 @@
 
   .tagline {
     font-size: 1rem;
-    max-width: 300px; /* Adjust for smaller screens */
+    max-width: 300px;
   }
 
   .taglineContainer {
-    flex-direction: column; /* Stack on mobile */
+    flex-direction: column;
     gap: 10px;
   }
 }
