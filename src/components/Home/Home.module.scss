@@ -1,7 +1,29 @@
+/* Declare TT Travels custom font */
+@font-face {
+  font-family: 'TT Travels';
+  src: url('../../assets/fonts/TTTravels-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Travels';
+  src: url('../../assets/fonts/TTTravels-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Travels';
+  src: url('../../assets/fonts/TTTravels-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
 .hero {
   text-align: center;
   padding: 50px 20px;
-  background-image: url('../../assets/Неон\ город\ вверх\ 1.png');
+  background-image: url('../../assets/images/Неон\ город\ вверх\ 1.png');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -24,7 +46,7 @@
 }
 
 .logo {
-  width: 250px;
+  width: 150px;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
@@ -41,7 +63,7 @@
 }
 
 .title {
-  margin-bottom: 60px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,27 +77,37 @@
 }
 
 .firstRow {
+  font-family: 'TT Travels', sans-serif; /* Apply TT Travels */
   font-size: 7rem;
+  font-weight: bold; /* Use bold for hero text */
   color: white;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
 .secondRow {
+  font-family: 'TT Travels', sans-serif; /* Apply TT Travels */
   font-size: 7rem;
+  font-weight: bold; /* Use bold for hero text */
   color: white;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
+/* Adjust gradientText to use italic where needed */
 .gradientText {
   background: linear-gradient(to right, #00FF00, #00CED1);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-family: 'TT Travels', sans-serif; /* Ensure gradient text uses TT Travels */
+}
+
+/* Specific styling for italic text (e.g., "The" and "Wiki") */
+.fst-italic {
+  font-family: 'TT Travels', sans-serif;
+  font-style: italic; /* Apply italic style */
 }
 
 .spaceship {
@@ -86,23 +118,24 @@
 }
 
 .taglineContainer {
-  gap: 60px;
+  gap: 20px;
   position: relative;
   z-index: 1;
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #87fbff;
+  color: #39d3fa;
   margin: 0;
   text-align: left;
   position: relative;
   z-index: 1;
   flex-shrink: 0;
+  font-family: 'TT Travels', sans-serif; /* Apply TT Travels to tagline */
 }
 
 .watchButton {
-  background: linear-gradient(to right, #00FF00, #00CED1);
+  background: #00cc88;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -115,6 +148,7 @@
   z-index: 1;
   width: auto;
   flex-shrink: 0;
+  font-family: 'TT Travels', sans-serif; /* Apply TT Travels to button */
 
   &:hover {
     background: #00b377;

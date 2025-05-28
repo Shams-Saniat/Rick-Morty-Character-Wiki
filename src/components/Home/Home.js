@@ -5,8 +5,9 @@ import LocationSlider from '../Sliders/LocationSlider';
 import styles from './Home.module.scss';
 
 // Import the assets
-import logo from '../../assets/Logo.png';
-import spaceship from '../../assets/bubble.png';
+import logo from '../../assets/images/Logo.png';
+import spaceship from '../../assets/images/bubble.png';
+import portal from '../../assets/images/portal.png';
 
 const Home = () => {
   return (
