@@ -18,7 +18,14 @@ body {
 }
 
 .nav-link.active {
-  border-bottom: 2px solid #00ccff; /* Neon blue */
-  color: #00ccff !important;
+  border-bottom: 2px solid #27ce3e;
+  background: linear-gradient(to right, #00FF00, #00CED1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
   font-weight: bold;
+}
+
+.greeenColor{
+  color: #27ce3e;
 }

@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
             <div className="container">
-                <Link to="/" className="fs-3 ubuntu navbar-brand">Rick and Morty <span className="text-primary">Wiki</span></Link>
+                <Link to="/" className="fs-3 ubuntu navbar-brand">Rick and Morty <span className="greeenColor">Wiki</span></Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -32,7 +32,8 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <NavLink activeClassName="active" to="/" className="nav-link">Characters</NavLink>
+                        <NavLink activeClassName="active" to="/" className="nav-link">Home</NavLink>
+                        <NavLink to="/characters" className="nav-link">Characters</NavLink>
                         <NavLink to="/episodes" className="nav-link">Episodes</NavLink>
                         <NavLink to="/location" className="nav-link">Location</NavLink>
                     </div>

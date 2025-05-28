@@ -1,60 +1,108 @@
 .hero {
   text-align: center;
   padding: 50px 20px;
-  background: linear-gradient(to bottom, #000428, #004e92); /* Dark gradient */
+  background-image: url('../../assets/Неон\ город\ вверх\ 1.png');
+  background-size: cover;
+  background-position: center;
   position: relative;
-  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  /* Optional: Add decorative elements like in the image */
-  &::before {
+  &:before {
     content: '';
     position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, #00cc88 0%, transparent 70%); /* Neon green portal effect */
-    opacity: 0.3;
-    border-radius: 50%;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #00ccff 0%, transparent 70%); /* Neon blue spaceship effect */
-    opacity: 0.3;
-    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
   }
 }
 
+.logo {
+  width: 250px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
 .title {
-  font-size: 4rem;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.firstRow,
+.secondRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.firstRow {
+  font-size: 7rem;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
 
-  .amp {
-    color: #00cc88; /* Neon green for the ampersand */
-    font-size: 5rem;
-    margin: 0 10px;
-  }
+.secondRow {
+  font-size: 7rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #00FF00, #00CED1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.spaceship {
+  width: 200px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.taglineContainer {
+  gap: 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #cccccc;
-  max-width: 600px;
-  margin: 0 auto 30px;
+  color: #87fbff;
+  margin: 0;
+  text-align: left; /* Align left for natural flow */
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0; /* Prevent tagline from shrinking */
 }
 
 .watchButton {
-  background: #00cc88; /* Neon green */
+  background: linear-gradient(to right, #00FF00, #00CED1);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -63,8 +111,43 @@
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  position: relative;
+  z-index: 1;
+  width: auto; /* Ensure button size is based on content */
+  flex-shrink: 0; /* Prevent button from shrinking */
 
   &:hover {
-    background: #00b377; /* Slightly darker green on hover */
+    background: #00b377;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .firstRow,
+  .secondRow {
+    font-size: 2.5rem;
+  }
+
+  .spaceship {
+    width: 80px;
+  }
+
+  .watchButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    max-width: 300px; /* Adjust for smaller screens */
+  }
+
+  .taglineContainer {
+    flex-direction: column; /* Stack on mobile */
+    gap: 10px;
   }
 }

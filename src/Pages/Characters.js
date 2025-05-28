@@ -30,7 +30,7 @@ const Characters = () => {
           </div>
           <div className="col-lg-8 col-12">
             <div className="row">
-              <Cards page="/characters" results={results} />
+              <Cards page="" results={results} />
             </div>
           </div>
         </div>
