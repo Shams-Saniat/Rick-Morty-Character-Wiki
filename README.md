@@ -34,7 +34,7 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/yourusername/rick-and-morty-wiki.git
    cd rick-and-morty-wiki
-Install dependencies:
+### Install dependencies:
 
 bash
 Copy
@@ -48,7 +48,7 @@ Edit
 npm start
 Open your browser and go to http://localhost:3000
 
-🧩 Folder Structure
+## 🧩 Folder Structure
 pgsql
 Copy
 Edit
@@ -67,7 +67,7 @@ src/
 ├── App.js
 ├── App.css
 ├── index.js
-🧪 Tech Stack
+## 🧪 Tech Stack
 React.js
 
 React Router
@@ -78,14 +78,14 @@ SCSS Modules
 
 Rick and Morty API
 
-🐛 Known Issues
+## 🐛 Known Issues
 The Filters component is currently static (if dynamic filter logic is expected, it might need enhancement).
 
 No loading or error handling states are implemented.
 
 Some responsiveness improvements could be made on smaller devices.
 
-🏗️ Future Improvements
+## 🏗️ Future Improvements
 Add loading spinners and error handling
 
 Implement dynamic filters (gender, status, species)
