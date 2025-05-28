@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import styles from './CardDetails.module.scss';
 
 const CardDetails = () => {
   let { id } = useParams();
-  let [fetchData, updateFetchData] = useState([]);
+  let [fetchData, updateFetchData] = useState({});
   let { name, image, location, origin, gender, species, status, type } = fetchData;
 
   let api = `https://rickandmortyapi.com/api/character/${id}`;
@@ -14,42 +15,38 @@ const CardDetails = () => {
     })();
   }, [api]);
 
-
   return (
-    <div className='container d-flex justify-content-center'>
-      <div className="d-flex flex-column gap-4">
-        <h1 className="text-center">{name}</h1>
-        <img src={image} alt="" className="img-fluid" />
-        {(() => {
-          if (status === "Dead") {
-            return <div className="badge bg-danger fs-5">{status}</div>;
-          } else if (status === "Alive") {
-            return <div className="badge bg-success fs-5">{status}</div>;
-          } else {
-            return <div className="badge bg-secondary fs-5">{status}</div>;
-          }
-        })()}
-
-        <div className="content">
-          <div className="">
-            <span className="fw-bold">Gender:</span>
-             {gender}
+    <div className={styles.cardDetailsContainer}>
+      <div className={styles.cardDetailsWrapper}>
+        <div className={styles.cardDetailsInner}>
+          <div className={styles.characterImage}>
+            <img src={image} alt={name} />
           </div>
-          <div className="">
-            <span className="fw-bold">Species:</span>
-             {species}
+          <h1 className={styles.characterName}>{name}</h1>
+          <div className={`${styles.badge} ${styles.badgeAlive} ${status === 'Dead' ? styles.badgeDead : status === 'Alive' ? styles.badgeAlive : styles.badgeUnknown}`}>
+            {status}
           </div>
-          <div className="">
-            <span className="fw-bold">Type:</span>
-             {type === ""? "Unknown" : type}
-          </div>
-          <div className="">
-            <span className="fw-bold">Location:</span>
-             {location?.name}
-          </div>
-          <div className="">
-            <span className="fw-bold">Origin:</span>
-             {origin?.name}
+          <div className={styles.detailsContent}>
+            <div className={styles.detailItem}>
+              <span className={styles.label}>Gender:</span>
+              <span className={styles.value}>{gender}</span>
+            </div>
+            <div className={styles.detailItem}>
+              <span className={styles.label}>Species:</span>
+              <span className={styles.value}>{species}</span>
+            </div>
+            <div className={styles.detailItem}>
+              <span className={styles.label}>Type:</span>
+              <span className={styles.value}>{type === "" ? "Unknown" : type}</span>
+            </div>
+            <div className={styles.detailItem}>
+              <span className={styles.label}>Location:</span>
+              <span className={styles.value}>{location?.name}</span>
+            </div>
+            <div className={styles.detailItem}>
+              <span className={styles.label}>Origin:</span>
+              <span className={styles.value}>{origin?.name}</span>
+            </div>
           </div>
         </div>
       </div>
